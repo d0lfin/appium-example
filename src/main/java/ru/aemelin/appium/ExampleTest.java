@@ -23,12 +23,13 @@ public class ExampleTest {
     public void simpleTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
-        capabilities.setCapability(MobileCapabilityType.APP, "/opt/android-sdk/com-yandex-browser-lite-17-6-1-11-apkplz.com.apk");
+        capabilities.setCapability(MobileCapabilityType.APP, "/opt/android-sdk/170700005-litebrowser-stable-release-signed.apk");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
         capabilities.setCapability(BROWSER_NAME, "wvga800");
-        capabilities.setCapability(BROWSER_VERSION, "24");
+        capabilities.setCapability(BROWSER_VERSION, "23");
+        capabilities.setCapability("version", "23");
 
-        AppiumDriver<MobileElement> driver = new AndroidDriver<>(new URL("http://localhost:4724/wd/hub"), capabilities);
+        AppiumDriver<MobileElement> driver = new AndroidDriver<>(new URL("http://user1:user1@localhost:4444/wd/hub"), capabilities);
         System.out.println(driver.getPageSource());
         driver.quit();
     }
